@@ -469,6 +469,7 @@ std::unique_ptr<LrHandle> Repo::Impl::lrHandleInitBase()
         dlist.push_back(item.c_str());
     }
     dlist.push_back(NULL);
+    handleSetOpt(h.get(), LRO_PRESERVETIME, 1L);
     handleSetOpt(h.get(), LRO_REPOTYPE, LR_YUMREPO);
     handleSetOpt(h.get(), LRO_USERAGENT, USER_AGENT);
     handleSetOpt(h.get(), LRO_YUMDLIST, dlist.data());
